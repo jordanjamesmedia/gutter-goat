@@ -4,9 +4,9 @@ const path = require('path');
 // Read template
 const template = fs.readFileSync('scripts/template.html', 'utf8');
 
-// Create locations directory
-if (!fs.existsSync('locations')) {
-    fs.mkdirSync('locations');
+// Create locations directory in dist
+if (!fs.existsSync('dist/locations')) {
+    fs.mkdirSync('dist/locations');
 }
 
 // Generate pages
@@ -20,7 +20,7 @@ Object.entries(locations).forEach(([slug, data]) => {
         .replace(/\[LOCATION\]/g, data.name)
         .replace(/\[POSTCODE\]/g, data.postcode);
     
-    fs.writeFileSync(`locations/${slug}.html`, content);
+    fs.writeFileSync(`dist/locations/${slug}.html`, content);
     console.log(`Created: ${slug}.html`);
 });
 
