@@ -1,0 +1,6 @@
+name: gutter-goat
+build:
+  command: npm install && npm run build
+  output_dir: dist
+  environment:
+    NODE_VERSION: 16.x 
