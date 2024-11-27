@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/generate-locations.js",
-    "generate": "node scripts/generate-locations.js"
-  },
-  "dependencies": {
-    "fs": "0.0.1-security",
-    "path": "^0.12.7"
+    "build": "node scripts/generate-locations.js"
   }
 } 
