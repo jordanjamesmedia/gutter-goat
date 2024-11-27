@@ -895,4 +895,41 @@ section {
     .phone-number {
         margin-left: auto;
     }
+}
+
+/* Call to Action Styling */
+.call-to-action {
+    text-align: center;
+    padding: 3rem;
+    background: var(--dark);
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+}
+
+.call-to-action h3 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.call-to-action p {
+    color: var(--light);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.phone-cta {
+    font-size: 1.5rem;
+    padding: 1.5rem 3rem;
+    margin: 1rem 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.availability {
+    color: var(--primary) !important;
+    font-size: 1rem !important;
+    margin-top: 1rem;
+    opacity: 0.8;
 } 
