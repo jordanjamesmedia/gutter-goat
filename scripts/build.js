@@ -1,59 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('Starting full build process...');
+console.log('Starting build process...');
 
-// Create all necessary directories
-const dirs = ['dist', 'dist/images', 'dist/locations', 'dist/scripts'];
-dirs.forEach(dir => {
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-        console.log(`Created directory: ${dir}`);
-    }
-});
-
-// Copy static files
-const staticFiles = [
-    'index.html',
-    'styles.css',
-    'thank-you.html',
-    'robots.txt',
-    '_headers'
-];
-
-staticFiles.forEach(file => {
-    if (fs.existsSync(file)) {
-        fs.copyFileSync(file, `dist/${file}`);
-        console.log(`Copied: ${file}`);
-    }
-});
-
-// Copy images
-if (fs.existsSync('images')) {
-    const images = fs.readdirSync('images');
-    images.forEach(image => {
-        fs.copyFileSync(
-            path.join('images', image),
-            path.join('dist/images', image)
-        );
-        console.log(`Copied image: ${image}`);
-    });
+// Create dist directory
+if (!fs.existsSync('dist')) {
+    fs.mkdirSync('dist');
+    console.log('Created dist directory');
 }
 
-// Copy scripts
-if (fs.existsSync('scripts')) {
-    const scripts = fs.readdirSync('scripts').filter(file => file.endsWith('.js'));
-    scripts.forEach(script => {
-        fs.copyFileSync(
-            path.join('scripts', script),
-            path.join('dist/scripts', script)
-        );
-        console.log(`Copied script: ${script}`);
-    });
+// Copy images directory
+if (!fs.existsSync('dist/images')) {
+    fs.mkdirSync('dist/images');
 }
 
-// Generate location pages
-console.log('Generating location pages...');
-require('./generate-locations.js');
+// Copy all images
+const imageFiles = fs.readdirSync('images');
+imageFiles.forEach(file => {
+    fs.copyFileSync(
+        path.join('images', file),
+        path.join('dist/images', file)
+    );
+    console.log(`Copied image: ${file}`);
+});
 
-console.log('Build completed successfully!'); 
+// Copy main files
+fs.copyFileSync('index.html', 'dist/index.html');
+fs.copyFileSync('styles.css', 'dist/styles.css');
+
+console.log('Build completed!'); 

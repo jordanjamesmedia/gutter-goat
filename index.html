@@ -16,7 +16,8 @@
         
         // Call tracking configuration
         gtag('config', 'AW-16797354549/pl_SCIq6q-8ZELWUzck-', {
-            'phone_conversion_number': '0497 347 752'
+            'phone_conversion_number': '0497 347 752',
+            'phone_conversion_css_class': 'phone-number'
         });
     </script>
     <script>
@@ -49,7 +50,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="https://guttergoat.com.au/images/gutter-goat-logo.png" alt="Gutter Goat Logo">
+                <img src="images/gutter-goat-logo.png" alt="Gutter Goat Logo">
                 <span class="logo-text">Gutter Goat</span>
             </div>
             <ul>
@@ -57,7 +58,11 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="phone-number"><a href="tel:0497347752">📞 0497 347 752</a></li>
+                <li class="phone-number">
+                    <a href="tel:0497347752" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Navigation'})">
+                        📞 0497 347 752
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -77,7 +82,7 @@
                 <div class="service-card">
                     <div class="service-card-content">
                         <div class="service-card-image">
-                            <img src="https://guttergoat.com.au/images/gutter-tree.png" alt="Gutter Cleaning">
+                            <img src="images/gutter-tree.png" alt="Gutter Cleaning">
                             <div class="service-card-overlay"></div>
                         </div>
                         <h3>Gutter Cleaning</h3>
@@ -98,7 +103,7 @@
                 <div class="service-card">
                     <div class="service-card-content">
                         <div class="service-card-image">
-                            <img src="https://guttergoat.com.au/images/gutter-flowers.jpg" alt="Gutter Maintenance">
+                            <img src="images/gutter-flowers.jpg" alt="Gutter Maintenance">
                             <div class="service-card-overlay"></div>
                         </div>
                         <h3>Gutter Maintenance</h3>
@@ -118,7 +123,7 @@
                 <div class="service-card">
                     <div class="service-card-content">
                         <div class="service-card-image">
-                            <img src="https://guttergoat.com.au/images/gutter-leaves.jpg" alt="Gutter Guard Installation">
+                            <img src="images/gutter-leaves.jpg" alt="Gutter Guard Installation">
                             <div class="service-card-overlay"></div>
                         </div>
                         <h3>Gutter Guard Installation</h3>
@@ -187,7 +192,7 @@
                     </div>
                 </div>
                 <div class="service-areas-map">
-                    <img src="https://guttergoat.com.au/images/service-areas-map.png" alt="Map of our service areas in the Illawarra region">
+                    <img src="images/service-areas-map.png" alt="Map of our service areas in the Illawarra region">
                 </div>
             </div>
         </section>
@@ -249,7 +254,7 @@
         <div class="footer-content">
             <div class="contact-info">
                 <h3>Contact Info</h3>
-                <p>Phone: 0497 347 752</p>
+                <p>Phone: <a href="tel:0497347752" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Footer'})">0497 347 752</a></p>
                 <p>Email: info@guttergoat.com.au</p>
             </div>
             <div class="social-links">
