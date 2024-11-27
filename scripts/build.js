@@ -3,48 +3,55 @@ const path = require('path');
 
 console.log('Starting build process...');
 
-// Create dist directory
-if (!fs.existsSync('dist')) {
-    fs.mkdirSync('dist');
-    console.log('Created dist directory');
-}
+// Create all required directories
+const dirs = [
+    'dist',
+    'dist/images',
+    'dist/locations',
+    'dist/scripts'
+];
 
-// Create dist/images directory
-if (!fs.existsSync('dist/images')) {
-    fs.mkdirSync('dist/images', { recursive: true });
-    console.log('Created dist/images directory');
-}
+dirs.forEach(dir => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+        console.log(`Created directory: ${dir}`);
+    }
+});
 
-// Check if images directory exists before trying to copy
-if (fs.existsSync('images')) {
-    console.log('Found images directory, copying files...');
-    const imageFiles = fs.readdirSync('images');
-    imageFiles.forEach(file => {
-        try {
-            fs.copyFileSync(
-                path.join('images', file),
-                path.join('dist/images', file)
-            );
-            console.log(`✅ Copied image: ${file}`);
-        } catch (error) {
-            console.error(`❌ Error copying ${file}:`, error.message);
-        }
-    });
-} else {
-    console.warn('⚠️ Warning: images directory not found');
-    // Create empty images directory
-    fs.mkdirSync('images', { recursive: true });
-    console.log('Created empty images directory');
-}
+// Copy images with verification
+const requiredImages = [
+    'gutter-goat-logo.png',
+    'gutter-tree.png',
+    'gutter-flowers.jpg',
+    'gutter-leaves.jpg',
+    'service-areas-map.png'
+];
 
-// Copy main files with error handling
-try {
-    fs.copyFileSync('index.html', 'dist/index.html');
-    console.log('✅ Copied index.html');
-    fs.copyFileSync('styles.css', 'dist/styles.css');
-    console.log('✅ Copied styles.css');
-} catch (error) {
-    console.error('❌ Error copying main files:', error.message);
-}
+requiredImages.forEach(image => {
+    const sourcePath = path.join('images', image);
+    const destPath = path.join('dist/images', image);
+    
+    if (fs.existsSync(sourcePath)) {
+        fs.copyFileSync(sourcePath, destPath);
+        console.log(`✅ Copied ${image}`);
+    } else {
+        console.error(`❌ Missing required image: ${image}`);
+    }
+});
+
+// Copy main files
+const mainFiles = [
+    'index.html',
+    'styles.css',
+    'robots.txt',
+    '_headers'
+];
+
+mainFiles.forEach(file => {
+    if (fs.existsSync(file)) {
+        fs.copyFileSync(file, `dist/${file}`);
+        console.log(`✅ Copied ${file}`);
+    }
+});
 
 console.log('Build completed!'); 
