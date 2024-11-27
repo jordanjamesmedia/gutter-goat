@@ -1,0 +1,14 @@
+name = "gutter-goat"
+type = "webpack"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = "./dist"
+entry-point = "workers-site"
+
+[build]
+command = "npm install && npm run build"
+output_dir = "dist" 
