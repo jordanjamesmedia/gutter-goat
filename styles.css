@@ -862,4 +862,37 @@ section {
     .benefits-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Phone number in nav */
+.phone-number a {
+    color: var(--primary) !important;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.phone-number a:hover {
+    background: var(--primary);
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: flex !important;
+        gap: 1rem;
+    }
+    
+    nav ul li:not(.phone-number) {
+        display: none;
+    }
+    
+    .phone-number {
+        margin-left: auto;
+    }
 } 
