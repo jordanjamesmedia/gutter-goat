@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://guttergoat.com.au/</loc>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://guttergoat.com.au/locations/helensburgh.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/stanwell-park.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/coalcliff.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/scarborough.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/wombarra.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/coledale.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/austinmer.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/thirroul.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/bulli.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://guttergoat.com.au/locations/woonona.html</loc>
+        <priority>0.8</priority>
+    </url>
+</urlset>

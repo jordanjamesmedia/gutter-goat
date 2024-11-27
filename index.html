@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gutter Goat - Professional Gutter Cleaning Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('process-form.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                alert('Thank you for your message. We will get back to you soon!');
+                this.reset();
+            } else {
+                alert('There was an error sending your message. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error sending your message. Please try again.');
+        });
+    });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/gutter-goat-logo.png" alt="Gutter Goat Logo">
+                <span class="logo-text">Gutter Goat</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Professional Gutter Cleaning Services</h1>
+            <p>Keep your gutters clear and your home protected with Gutter Goat</p>
+            <button class="cta-button">Get Free Quote</button>
+        </section>
+
+        <section id="services">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <div class="service-card-image">
+                            <img src="images/gutter-tree.png" alt="Gutter Cleaning">
+                            <div class="service-card-overlay"></div>
+                        </div>
+                        <h3>Gutter Cleaning</h3>
+                        <p>Professional gutter cleaning services to keep your home protected from water damage.</p>
+                        <div class="service-card-details">
+                            <h4>Service Includes:</h4>
+                            <ul>
+                                <li>Complete debris removal</li>
+                                <li>Gutter flushing</li>
+                                <li>Downpipe checking</li>
+                                <li>Free inspection report</li>
+                            </ul>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <div class="service-card-image">
+                            <img src="images/gutter-flowers.jpg" alt="Gutter Maintenance">
+                            <div class="service-card-overlay"></div>
+                        </div>
+                        <h3>Gutter Maintenance</h3>
+                        <p>Regular maintenance to ensure your gutters stay in perfect working condition.</p>
+                        <div class="service-card-details">
+                            <h4>Service Includes:</h4>
+                            <ul>
+                                <li>Preventive maintenance</li>
+                                <li>Gutter inspection</li>
+                                <li>Minor repairs</li>
+                                <li>Maintenance report</li>
+                            </ul>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <div class="service-card-image">
+                            <img src="images/gutter-leaves.jpg" alt="Gutter Guard Installation">
+                            <div class="service-card-overlay"></div>
+                        </div>
+                        <h3>Gutter Guard Installation</h3>
+                        <p>Premium gutter protection systems to keep leaves and debris out while letting water flow freely.</p>
+                        <div class="service-card-details">
+                            <h4>Benefits:</h4>
+                            <ul>
+                                <li>Prevents leaf buildup</li>
+                                <li>Reduces maintenance</li>
+                                <li>Extends gutter life</li>
+                                <li>5-year warranty</li>
+                            </ul>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="service-areas">
+            <div class="service-areas-container">
+                <div class="service-areas-list">
+                    <h3>Servicing the Illawarra Region</h3>
+                    <div class="areas-grid">
+                        <a href="locations/helensburgh.html" class="area-link">Helensburgh (2508)</a>
+                        <a href="locations/stanwell-park.html" class="area-link">Stanwell Park (2508)</a>
+                        <a href="locations/coalcliff.html" class="area-link">Coalcliff (2508)</a>
+                        <a href="locations/scarborough.html" class="area-link">Scarborough (2515)</a>
+                        <a href="locations/wombarra.html" class="area-link">Wombarra (2515)</a>
+                        <a href="locations/coledale.html" class="area-link">Coledale (2515)</a>
+                        <a href="locations/austinmer.html" class="area-link">Austinmer (2515)</a>
+                        <a href="locations/thirroul.html" class="area-link">Thirroul (2515)</a>
+                        <a href="locations/bulli.html" class="area-link">Bulli (2516)</a>
+                        <a href="locations/woonona.html" class="area-link">Woonona (2517)</a>
+                        
+                        <a href="locations/corrimal.html" class="area-link">Corrimal (2518)</a>
+                        <a href="locations/towradgi.html" class="area-link">Towradgi (2518)</a>
+                        <a href="locations/fairy-meadow.html" class="area-link">Fairy Meadow (2519)</a>
+                        <a href="locations/mount-ousley.html" class="area-link">Mount Ousley (2519)</a>
+                        <a href="locations/north-wollongong.html" class="area-link">North Wollongong (2500)</a>
+                        <a href="locations/wollongong.html" class="area-link">Wollongong (2500)</a>
+                        <a href="locations/mangerton.html" class="area-link">Mangerton (2500)</a>
+                        <a href="locations/mount-keira.html" class="area-link">Mount Keira (2500)</a>
+                        
+                        <a href="locations/coniston.html" class="area-link">Coniston (2500)</a>
+                        <a href="locations/port-kembla.html" class="area-link">Port Kembla (2505)</a>
+                        <a href="locations/warrawong.html" class="area-link">Warrawong (2502)</a>
+                        <a href="locations/lake-heights.html" class="area-link">Lake Heights (2502)</a>
+                        <a href="locations/berkeley.html" class="area-link">Berkeley (2506)</a>
+                        
+                        <a href="locations/unanderra.html" class="area-link">Unanderra (2526)</a>
+                        <a href="locations/kembla-grange.html" class="area-link">Kembla Grange (2526)</a>
+                        <a href="locations/dapto.html" class="area-link">Dapto (2530)</a>
+                        <a href="locations/horsley.html" class="area-link">Horsley (2530)</a>
+                        
+                        <a href="locations/albion-park.html" class="area-link">Albion Park (2527)</a>
+                        <a href="locations/shellharbour.html" class="area-link">Shellharbour (2529)</a>
+                        <a href="locations/shell-cove.html" class="area-link">Shell Cove (2529)</a>
+                        
+                        <a href="locations/jamberoo.html" class="area-link">Jamberoo (2533)</a>
+                        <a href="locations/kiama.html" class="area-link">Kiama (2533)</a>
+                        <a href="locations/gerringong.html" class="area-link">Gerringong (2534)</a>
+                        
+                        <a href="locations/berry.html" class="area-link">Berry (2535)</a>
+                        <a href="locations/shoalhaven-heads.html" class="area-link">Shoalhaven Heads (2535)</a>
+                    </div>
+                </div>
+                <div class="service-areas-map">
+                    <img src="images/service-areas-map.png" alt="Map of our service areas in the Illawarra region">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-contact-container">
+            <div class="about-contact-inner">
+                <div id="about">
+                    <h2>Why Choose Gutter Goat?</h2>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>Experienced Team</h3>
+                            <p>Our professional technicians bring years of expertise to every job, ensuring quality service every time.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Reliable Service</h3>
+                            <p>Count on us for punctual, thorough, and professional gutter cleaning services.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Satisfaction Guaranteed</h3>
+                            <p>We stand behind our work with a 100% satisfaction guarantee - your peace of mind is our priority.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Local Expertise</h3>
+                            <p>As local specialists, we understand the unique challenges of Illawarra gutters and provide tailored solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="contact">
+                    <h2>Contact Us</h2>
+                    <form id="contactForm" action="thank-you.html" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                        <div class="form-footer">
+                            <p>By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                <p>Phone: 0497 347 752</p>
+                <p>Email: info@guttergoat.com.au</p>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Gutter Goat. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts/map-interactions.js"></script>
+</body>
+</html> 
