@@ -3,54 +3,38 @@ const path = require('path');
 
 console.log('Starting build process...');
 
-// Create all required directories
-const dirs = [
-    'dist',
-    'dist/images',
-    'dist/locations',
-    'dist/scripts'
-];
+// First, create dist directory
+if (!fs.existsSync('dist')) {
+    fs.mkdirSync('dist');
+}
 
-dirs.forEach(dir => {
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-        console.log(`Created directory: ${dir}`);
+// Copy entire images directory
+console.log('Copying images directory...');
+if (fs.existsSync('images')) {
+    // Create images directory in dist if it doesn't exist
+    if (!fs.existsSync('dist/images')) {
+        fs.mkdirSync('dist/images');
     }
-});
-
-// Copy images with verification
-const requiredImages = [
-    'gutter-goat-logo.png',
-    'gutter-tree.png',
-    'gutter-flowers.jpg',
-    'gutter-leaves.jpg',
-    'service-areas-map.png'
-];
-
-requiredImages.forEach(image => {
-    const sourcePath = path.join('images', image);
-    const destPath = path.join('dist/images', image);
     
-    if (fs.existsSync(sourcePath)) {
+    // Copy each image
+    const images = fs.readdirSync('images');
+    images.forEach(file => {
+        const sourcePath = path.join('images', file);
+        const destPath = path.join('dist/images', file);
         fs.copyFileSync(sourcePath, destPath);
-        console.log(`✅ Copied ${image}`);
-    } else {
-        console.error(`❌ Missing required image: ${image}`);
-    }
-});
+        console.log(`Copied: ${file}`);
+    });
+} else {
+    console.error('Images directory not found!');
+    process.exit(1);
+}
 
-// Copy main files
-const mainFiles = [
-    'index.html',
-    'styles.css',
-    'robots.txt',
-    '_headers'
-];
-
-mainFiles.forEach(file => {
+// Copy other files
+const filesToCopy = ['index.html', 'styles.css', 'process-form.php'];
+filesToCopy.forEach(file => {
     if (fs.existsSync(file)) {
-        fs.copyFileSync(file, `dist/${file}`);
-        console.log(`✅ Copied ${file}`);
+        fs.copyFileSync(file, path.join('dist', file));
+        console.log(`Copied: ${file}`);
     }
 });
 

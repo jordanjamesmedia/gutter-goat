@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Set recipient email
     $to = "info@guttergoat.com.au";
-    $subject = "New Contact Form Submission from Gutter Goat";
     
     // Get form data
     $name = $_POST['name'] ?? 'Not provided';
@@ -9,8 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'] ?? 'Not provided';
     $message = $_POST['message'] ?? 'No message';
     
+    // Set email subject
+    $subject = "New Website Enquiry - Gutter Goat";
+    
     // Create email content
-    $email_content = "Name: $name\n";
+    $email_content = "New contact form submission:\n\n";
+    $email_content .= "Name: $name\n";
     $email_content .= "Email: $email\n";
     $email_content .= "Phone: $phone\n\n";
     $email_content .= "Message:\n$message\n";
