@@ -26,7 +26,7 @@ if (fs.existsSync('images')) {
 }
 
 // Copy main files
-const files = ['index.html', 'styles.css'];
+const files = ['index.html', 'styles.css', 'thank-you.html'];
 files.forEach(file => {
     if (fs.existsSync(file)) {
         fs.copyFileSync(file, path.join('dist', file));

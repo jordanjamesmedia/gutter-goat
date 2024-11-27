@@ -45,6 +45,15 @@
         });
     });
     </script>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Track form submission
+        gtag('event', 'form_submission', {
+            'event_category': 'Contact',
+            'event_label': 'Contact Form'
+        });
+    });
+    </script>
 </head>
 <body>
     <header>
@@ -223,7 +232,7 @@
                 
                 <div id="contact">
                     <h2>Contact Us</h2>
-                    <form id="contactForm" action="thank-you.html" method="POST">
+                    <form id="contactForm" method="POST" action="https://formspree.io/f/info@guttergoat.com.au">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -240,10 +249,9 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
+                        <input type="hidden" name="_next" value="https://guttergoat.com.au/thank-you.html">
+                        <input type="hidden" name="_subject" value="New Gutter Goat Website Enquiry">
                         <button type="submit">Send Message</button>
-                        <div class="form-footer">
-                            <p>By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a></p>
-                        </div>
                     </form>
                 </div>
             </div>
