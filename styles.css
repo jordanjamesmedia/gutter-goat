@@ -268,8 +268,8 @@ nav ul li a:hover {
 
 /* Service Areas Section */
 #service-areas {
+    padding: 3rem 2rem;
     background: var(--darker);
-    padding: 4rem 2rem;
 }
 
 .service-areas-container {
@@ -284,16 +284,16 @@ nav ul li a:hover {
 .service-areas-list h3 {
     color: var(--primary);
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .areas-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
     background: var(--dark);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 5px 30px rgba(0,0,0,0.1);
 }
@@ -301,7 +301,7 @@ nav ul li a:hover {
 .area-link {
     color: #ffffff;
     text-decoration: none;
-    padding: 0.75rem;
+    padding: 0.4rem 0.6rem;
     transition: all 0.3s ease;
     font-weight: 500;
     font-size: 1rem;

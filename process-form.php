@@ -1,24 +1,30 @@
 <?php
-header('Content-Type: application/json');
-
-// Replace with your email
-$to_email = 'your@email.com';
-
-$name = $_POST['name'] ?? '';
-$email = $_POST['email'] ?? '';
-$phone = $_POST['phone'] ?? '';
-$message = $_POST['message'] ?? '';
-
-$subject = "New Contact Form Submission from Gutter Goat";
-$email_content = "Name: $name\n";
-$email_content .= "Email: $email\n";
-$email_content .= "Phone: $phone\n\n";
-$email_content .= "Message:\n$message";
-
-$headers = "From: $email";
-
-if(mail($to_email, $subject, $email_content, $headers)) {
-    echo json_encode(['success' => true]);
-} else {
-    echo json_encode(['success' => false]);
-} 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $to = "info@guttergoat.com.au";
+    $subject = "New Contact Form Submission from Gutter Goat";
+    
+    // Get form data
+    $name = $_POST['name'] ?? 'Not provided';
+    $email = $_POST['email'] ?? 'Not provided';
+    $phone = $_POST['phone'] ?? 'Not provided';
+    $message = $_POST['message'] ?? 'No message';
+    
+    // Create email content
+    $email_content = "Name: $name\n";
+    $email_content .= "Email: $email\n";
+    $email_content .= "Phone: $phone\n\n";
+    $email_content .= "Message:\n$message\n";
+    
+    // Email headers
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
+    
+    // Send email
+    mail($to, $subject, $email_content, $headers);
+    
+    // Redirect to thank you page
+    header('Location: thank-you.html');
+    exit;
+}
+?> 
