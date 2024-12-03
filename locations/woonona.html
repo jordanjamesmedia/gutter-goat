@@ -18,6 +18,19 @@
     <link rel="canonical" href="https://guttergoat.com.au/locations/woonona">
     <link rel="stylesheet" href="../styles.css">
     
+    <!-- Google Analytics and Phone Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16797354549"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16797354549');
+      gtag('config', 'AW-16797354549/pl_SCIq6q-8ZELWUzck-', {
+        'phone_conversion_number': '0497 347 752'
+      });
+    </script>
+
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16797354549"></script>
     <script>
@@ -25,40 +38,89 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-16797354549');
+      gtag('config', 'AW-16797354549/pl_SCIq6q-8ZELWUzck-', {
+        'phone_conversion_number': '0497 347 752'
+      });
+      gtag('config', 'AW-16797354549/t24MCMPFpfIZELWUzck-', {
+        'phone_conversion_number': '0497 347 752'
+      });
     </script>
+    
+    <!-- Event snippet for 0497 347 752 - Mobile conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16797354549/Awk1CMjjlvIZELWUzck-',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16797354549');
+      gtag('config', 'AW-16797354549/pl_SCIq6q-8ZELWUzck-', {
+        'phone_conversion_number': '0497 347 752'
+      });
+      gtag('config', 'AW-16797354549/t24MCMPFpfIZELWUzck-', {
+        'phone_conversion_number': '0497 347 752'
+      });
+    </script>
+    
+    <!-- Event snippet for 0497 347 752 - Mobile conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16797354549/Awk1CMjjlvIZELWUzck-',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
 </head>
 <body>
-    <header>
+            <header>
         <nav>
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../images/gutter-goat-logo.png" alt="Gutter Goat Logo">
-                    <span class="logo-text">Gutter Goat</span>
-                </a>
-            </div>
+            <a href="/" class="logo">
+                <img src="/images/gutter-goat-logo.png" alt="Gutter Goat Logo">
+                <span class="logo-text">Gutter Goat</span>
+            </a>
             <ul>
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-                <li><a href="tel:0497347752" class="phone-link">0497 347 752</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#locations">Locations</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><a href="tel:0497347752" class="phone-link" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Header Phone'});">0497 347 752</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="location-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/gutter-tree.png');">
+        <section class="location-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/gutter-cleaning.jpg')">
             <div class="location-hero-content">
                 <h1>Professional Gutter Cleaning in Woonona</h1>
                 <p>Expert local service in Woonona and surrounding areas</p>
                 <div class="hero-cta">
-                    <a href="tel:0497347752" class="cta-button">Call Now</a>
+                    <a href="tel:0497347752" class="cta-button" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Hero CTA'});">Call Now</a>
                     <a href="#quote-form" class="cta-button secondary">Get Quote</a>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
         <section class="location-services" id="services">
             <div class="section-title">
                 <h2>Our Services in Woonona</h2>
@@ -66,43 +128,35 @@
             <div class="service-grid">
                 <div class="service-card">
                     <div class="service-card-content">
-                        <div class="service-card-image">
-                            <img src="../images/gutter-tree.png" alt="Gutter Cleaning Woonona">
-                        </div>
                         <h3>Gutter Cleaning</h3>
-                        <p>Professional gutter cleaning service in Woonona. We remove all debris and ensure proper water flow.</p>
-                        <ul class="service-features">
+                        <p>Professional gutter cleaning service in Woonona to prevent water damage and maintain your home.</p>
+                        <ul>
                             <li>Complete debris removal</li>
                             <li>Downpipe checking</li>
                             <li>Gutter flushing</li>
                         </ul>
                     </div>
                 </div>
-                
                 <div class="service-card">
                     <div class="service-card-content">
-                        <div class="service-card-image">
-                            <img src="../images/gutter-flowers.jpg" alt="Gutter Maintenance Woonona">
-                        </div>
-                        <h3>Maintenance</h3>
-                        <p>Regular maintenance to protect your Woonona property from water damage.</p>
-                        <ul class="service-features">
-                            <li>Preventive care</li>
-                            <li>Regular inspections</li>
+                        <h3>Gutter Maintenance</h3>
+                        <p>Regular maintenance to keep your gutters in perfect working order.</p>
+                        <ul>
+                            <li>Rust treatment</li>
                             <li>Minor repairs</li>
+                            <li>Preventative care</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits Section -->
         <section class="location-benefits">
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">✓</div>
                     <h3>Local Expertise</h3>
-                    <p>Specialized knowledge of Woonona's unique challenges</p>
+                    <p>Specialised knowledge of Woonona's unique challenges</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🛡️</div>
@@ -117,14 +171,13 @@
             </div>
         </section>
 
-        <!-- Quote Form Section -->
         <section id="quote-form" class="quote-section">
             <div class="quote-container">
                 <h2>Get a Free Quote</h2>
                 <form action="../thank-you.html" method="POST" class="location-form">
                     <div class="form-row">
-                        <input type="text" placeholder="Name" required>
-                        <input type="tel" placeholder="Phone" required>
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="tel" name="phone" placeholder="Phone" required>
                     </div>
                     <button type="submit" class="cta-button">Request Quote</button>
                 </form>
@@ -136,8 +189,8 @@
         <div class="footer-content">
             <div class="contact-info">
                 <h3>Contact Info</h3>
-                <p>Phone: 0497 347 752</p>
-                <p>Email: info@guttergoat.com.au</p>
+                <p>Phone: <a href="tel:0497347752" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Footer Phone'});">0497 347 752</a></p>
+                <p>Email: <a href="mailto:info@guttergoat.com.au">info@guttergoat.com.au</a></p>
                 <p>Servicing Woonona 2517</p>
             </div>
             <div class="social-links">
@@ -149,5 +202,21 @@
             <p>&copy; 2024 Gutter Goat. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('locationSearch').addEventListener('input', function() {
+            var searchTerm = this.value.toLowerCase();
+            var locations = document.querySelectorAll('.location-list li');
+            
+            locations.forEach(function(location) {
+                var text = location.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    location.style.display = '';
+                } else {
+                    location.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>

@@ -29,33 +29,96 @@
         });
     });
     </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16797354549"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16797354549');
+      gtag('config', 'AW-16797354549/pl_SCIq6q-8ZELWUzck-', {
+        'phone_conversion_number': '0497 347 752'
+      });
+      gtag('config', 'AW-16797354549/t24MCMPFpfIZELWUzck-', {
+        'phone_conversion_number': '0497 347 752'
+      });
+    </script>
+    
+    <!-- Event snippet for 0497 347 752 - Mobile conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16797354549/Awk1CMjjlvIZELWUzck-',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+    </script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">
+            <a href="/" class="logo">
                 <img src="/images/gutter-goat-logo.png" alt="Gutter Goat Logo">
                 <span class="logo-text">Gutter Goat</span>
-            </div>
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">☰</button>
             <ul>
-                <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="phone-number">
-                    <a href="tel:0497347752" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Navigation'})">
-                        📞 0497 347 752
-                    </a>
-                </li>
+                <li><a href="tel:0497347752" class="phone-link" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Header Phone'});">0497 347 752</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h1>Professional Gutter Cleaning Services</h1>
-            <p>Keep your gutters clear and your home protected with Gutter Goat</p>
-            <button class="cta-button">Get Free Quote</button>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Professional Gutter Cleaning Services</h1>
+                    <p>Servicing Wollongong, Shellharbour, Kiama and the entire Illawarra region</p>
+                    <div class="hero-cta">
+                        <a href="tel:0497347752" class="cta-button phone-cta" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Hero CTA'});">
+                            📞 Call Now: 0497 347 752
+                        </a>
+                        <a href="#contact" class="cta-button quote-cta">Get Free Quote</a>
+                    </div>
+                </div>
+                <div class="hero-form">
+                    <div class="quick-quote-form">
+                        <h3>Get a Quick Quote</h3>
+                        <form id="quickQuoteForm" onsubmit="return handleQuickSubmit(event)">
+                            <div class="form-group">
+                                <input type="text" id="quickName" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="quickPhone" name="phone" required placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="quickSuburb" name="suburb" required placeholder="Your Suburb">
+                            </div>
+                            <button type="submit" class="submit-button">Get Quote Now</button>
+                            <input type="hidden" name="_next" value="https://guttergoat.com.au/thanks.html">
+                            <input type="hidden" name="_subject" value="Quick Quote Request - Gutter Goat">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="services">
@@ -79,7 +142,6 @@
                                 <li>Downpipe checking</li>
                                 <li>Free inspection report</li>
                             </ul>
-                            <a href="#" class="learn-more">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -100,10 +162,10 @@
                                 <li>Minor repairs</li>
                                 <li>Maintenance report</li>
                             </ul>
-                            <a href="#" class="learn-more">Learn More</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="service-card">
                     <div class="service-card-content">
                         <div class="service-card-image">
@@ -120,100 +182,192 @@
                                 <li>Extends gutter life</li>
                                 <li>5-year warranty</li>
                             </ul>
-                            <a href="#" class="learn-more">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="service-areas">
-            <div class="service-areas-container">
-                <div class="service-areas-list">
-                    <h3>Servicing the Illawarra Region</h3>
-                    <div class="areas-grid">
-                        <a href="locations/helensburgh.html" class="area-link">Helensburgh (2508)</a>
-                        <a href="locations/stanwell-park.html" class="area-link">Stanwell Park (2508)</a>
-                        <a href="locations/coalcliff.html" class="area-link">Coalcliff (2508)</a>
-                        <a href="locations/scarborough.html" class="area-link">Scarborough (2515)</a>
-                        <a href="locations/wombarra.html" class="area-link">Wombarra (2515)</a>
-                        <a href="locations/coledale.html" class="area-link">Coledale (2515)</a>
-                        <a href="locations/austinmer.html" class="area-link">Austinmer (2515)</a>
-                        <a href="locations/thirroul.html" class="area-link">Thirroul (2515)</a>
-                        <a href="locations/bulli.html" class="area-link">Bulli (2516)</a>
-                        <a href="locations/woonona.html" class="area-link">Woonona (2517)</a>
-                        
-                        <a href="locations/corrimal.html" class="area-link">Corrimal (2518)</a>
-                        <a href="locations/towradgi.html" class="area-link">Towradgi (2518)</a>
-                        <a href="locations/fairy-meadow.html" class="area-link">Fairy Meadow (2519)</a>
-                        <a href="locations/mount-ousley.html" class="area-link">Mount Ousley (2519)</a>
-                        <a href="locations/north-wollongong.html" class="area-link">North Wollongong (2500)</a>
-                        <a href="locations/wollongong.html" class="area-link">Wollongong (2500)</a>
-                        <a href="locations/mangerton.html" class="area-link">Mangerton (2500)</a>
-                        <a href="locations/mount-keira.html" class="area-link">Mount Keira (2500)</a>
-                        
-                        <a href="locations/coniston.html" class="area-link">Coniston (2500)</a>
-                        <a href="locations/port-kembla.html" class="area-link">Port Kembla (2505)</a>
-                        <a href="locations/warrawong.html" class="area-link">Warrawong (2502)</a>
-                        <a href="locations/lake-heights.html" class="area-link">Lake Heights (2502)</a>
-                        <a href="locations/berkeley.html" class="area-link">Berkeley (2506)</a>
-                        
-                        <a href="locations/unanderra.html" class="area-link">Unanderra (2526)</a>
-                        <a href="locations/kembla-grange.html" class="area-link">Kembla Grange (2526)</a>
-                        <a href="locations/dapto.html" class="area-link">Dapto (2530)</a>
-                        <a href="locations/horsley.html" class="area-link">Horsley (2530)</a>
-                        
-                        <a href="locations/albion-park.html" class="area-link">Albion Park (2527)</a>
-                        <a href="locations/shellharbour.html" class="area-link">Shellharbour (2529)</a>
-                        <a href="locations/shell-cove.html" class="area-link">Shell Cove (2529)</a>
-                        
-                        <a href="locations/jamberoo.html" class="area-link">Jamberoo (2533)</a>
-                        <a href="locations/kiama.html" class="area-link">Kiama (2533)</a>
-                        <a href="locations/gerringong.html" class="area-link">Gerringong (2534)</a>
-                        
-                        <a href="locations/berry.html" class="area-link">Berry (2535)</a>
-                        <a href="locations/shoalhaven-heads.html" class="area-link">Shoalhaven Heads (2535)</a>
+        <section id="why-choose" class="why-choose-section">
+            <div class="section-inner">
+                <h2>Why Choose Gutter Goat?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Experienced Team</h3>
+                        <p>Our professional technicians bring years of expertise to every job, ensuring quality service every time.</p>
                     </div>
-                </div>
-                <div class="service-areas-map">
-                    <img src="/images/service-areas-map.png" alt="Map of our service areas in the Illawarra region">
+                    <div class="feature-card">
+                        <div class="feature-icon">⭐</div>
+                        <h3>Reliable Service</h3>
+                        <p>Count on us for punctual, thorough, and professional gutter cleaning services.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3>Satisfaction Guaranteed</h3>
+                        <p>We stand behind our work with a 100% satisfaction guarantee - your peace of mind is our priority.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏠</div>
+                        <h3>Local Expertise</h3>
+                        <p>As local specialists, we understand the unique challenges of Illawarra gutters and provide tailored solutions.</p>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section class="about-contact-container">
-            <div class="about-contact-inner">
-                <div id="about">
-                    <h2>Why Choose Gutter Goat?</h2>
-                    <div class="features">
-                        <div class="feature">
-                            <h3>Experienced Team</h3>
-                            <p>Our professional technicians bring years of expertise to every job, ensuring quality service every time.</p>
-                        </div>
-                        <div class="feature">
-                            <h3>Reliable Service</h3>
-                            <p>Count on us for punctual, thorough, and professional gutter cleaning services.</p>
-                        </div>
-                        <div class="feature">
-                            <h3>Satisfaction Guaranteed</h3>
-                            <p>We stand behind our work with a 100% satisfaction guarantee - your peace of mind is our priority.</p>
-                        </div>
-                        <div class="feature">
-                            <h3>Local Expertise</h3>
-                            <p>As local specialists, we understand the unique challenges of Illawarra gutters and provide tailored solutions.</p>
-                        </div>
-                    </div>
-                </div>
                 
-                <div id="contact">
-                    <h2>Contact Us</h2>
-                    <div class="call-to-action">
-                        <h3>Ready to get your gutters cleaned?</h3>
-                        <p>Call us now for a free quote!</p>
-                        <a href="tel:0497347752" class="cta-button phone-cta" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Main CTA'})">
-                            📞 0497 347 752
-                        </a>
-                        <p class="availability">Available 7 days a week</p>
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <h2>Get Your Free Quote</h2>
+                <p class="section-subtitle">Answer a few questions to receive your fast, accurate quote</p>
+                <div class="contact-wrapper">
+                    <div class="contact-form-side">
+                        <form id="multiStepForm" class="multi-step-form" onsubmit="return handleSubmit(event)">
+                            <div class="form-step" data-step="1">
+                                <h3>Step 1: Basic Details</h3>
+                                <div class="form-group">
+                                    <label for="stories">How many stories is your home?</label>
+                                    <select id="stories" name="stories" required>
+                                        <option value="">Select number of stories</option>
+                                        <option value="1">Single Story</option>
+                                        <option value="2">Double Story</option>
+                                        <option value="3">Three Stories or More</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roofType">What type of roof do you have?</label>
+                                    <select id="roofType" name="roofType" required>
+                                        <option value="">Select roof type</option>
+                                        <option value="tile">Tile</option>
+                                        <option value="metal">Metal</option>
+                                        <option value="colorbond">Colorbond</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="next-step">Next Step</button>
+                                    <button type="button" class="prev-step">Go Back</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="2" style="display: none;">
+                                <h3>Step 2: Gutter Details</h3>
+                                <div class="form-group">
+                                    <label for="gutterGuard">Do you currently have gutter guard installed?</label>
+                                    <select id="gutterGuard" name="gutterGuard" required>
+                                        <option value="">Select an option</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                        <option value="unsure">Not Sure</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastCleaned">When was the last time your gutters were cleaned?</label>
+                                    <select id="lastCleaned" name="lastCleaned" required>
+                                        <option value="">Select timeframe</option>
+                                        <option value="0-6">0-6 months ago</option>
+                                        <option value="6-12">6-12 months ago</option>
+                                        <option value="12+">Over 12 months ago</option>
+                                        <option value="never">Never/Not Sure</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="next-step">Next Step</button>
+                                    <button type="button" class="prev-step">Go Back</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="3" style="display: none;">
+                                <h3>Step 3: Service Details</h3>
+                                <div class="form-group">
+                                    <label for="serviceType">What service are you interested in?</label>
+                                    <select id="serviceType" name="serviceType" required>
+                                        <option value="">Select service type</option>
+                                        <option value="cleaning">Gutter Cleaning</option>
+                                        <option value="maintenance">Gutter Maintenance</option>
+                                        <option value="guard">Gutter Guard Installation</option>
+                                        <option value="repair">Gutter Repair</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeframe">When would you like the service?</label>
+                                    <select id="timeframe" name="timeframe" required>
+                                        <option value="">Select timeframe</option>
+                                        <option value="asap">As Soon As Possible</option>
+                                        <option value="1-2weeks">Within 1-2 Weeks</option>
+                                        <option value="month">Within a Month</option>
+                                        <option value="flexible">Flexible</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="next-step">Next Step</button>
+                                    <button type="button" class="prev-step">Go Back</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="4" style="display: none;">
+                                <h3>Step 4: Property Type</h3>
+                                <div class="form-group">
+                                    <label for="propertyType">What type of property is it?</label>
+                                    <select id="propertyType" name="propertyType" required>
+                                        <option value="">Select property type</option>
+                                        <option value="residential">Residential Home</option>
+                                        <option value="commercial">Commercial Property</option>
+                                        <option value="strata">Strata Complex</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Street Address</label>
+                                    <input type="text" id="address" name="address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="suburb">Suburb</label>
+                                    <input type="text" id="suburb" name="suburb" required>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="next-step">Next Step</button>
+                                    <button type="button" class="prev-step">Go Back</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="5" style="display: none;">
+                                <h3>Step 5: Contact Details</h3>
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Additional Notes (Optional)</label>
+                                    <textarea id="message" name="message" rows="4"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="submit-form">Get Quote</button>
+                                    <button type="button" class="prev-step">Go Back</button>
+                                </div>
+                            </div>
+                            <input type="hidden" name="_next" value="https://guttergoat.com.au/thanks.html">
+                            <input type="hidden" name="_subject" value="New Gutter Cleaning Quote Request">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                        </form>
+                    </div>
+                    <div class="contact-info-side">
+                        <div class="quick-contact">
+                            <h3>Need Immediate Assistance?</h3>
+                            <a href="tel:0497347752" class="phone-button" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Contact Section'})">
+                                📞 0497 347 752
+                            </a>
+                            <p class="availability">Available 7 days a week</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -224,26 +378,232 @@
         <div class="footer-content">
             <div class="contact-info">
                 <h3>Contact Info</h3>
-                <p>Phone: <a href="tel:0497347752" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Footer'})">0497 347 752</a></p>
+                <p>Phone: <a href="tel:0497347752" onclick="gtag('event', 'click', {'event_category': 'Phone Call', 'event_action': 'Click', 'event_label': 'Footer'});">0497 347 752</a></p>
                 <p>Email: info@guttergoat.com.au</p>
             </div>
             <div class="social-links">
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
             </div>
         </div>
         <div class="copyright">
             <p>&copy; 2024 Gutter Goat. All rights reserved.</p>
         </div>
     </footer>
-    <script src="scripts/map-interactions.js"></script>
+
     <script>
-    window.addEventListener('load', function() {
-        document.querySelectorAll('img').forEach(img => {
-            console.log(`Image ${img.alt}: ${img.src} - ${img.complete ? '✅' : '❌'}`);
+    document.addEventListener('DOMContentLoaded', function() {
+        // Location search and filter functionality
+        const locationSearch = document.getElementById('locationSearch');
+        const postcodeFilter = document.getElementById('postcodeFilter');
+        const locationCards = document.querySelectorAll('.location-card');
+
+        function filterLocations() {
+            const searchTerm = locationSearch.value.toLowerCase();
+            const selectedPostcode = postcodeFilter.value;
+
+            locationCards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const postcode = card.dataset.postcode;
+                
+                const matchesSearch = searchTerm === '' || name.includes(searchTerm);
+                const matchesPostcode = selectedPostcode === '' || postcode === selectedPostcode;
+
+                if (matchesSearch && matchesPostcode) {
+                    card.style.display = '';
+                    card.style.animation = 'fadeIn 0.5s ease-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        if (locationSearch) {
+            locationSearch.addEventListener('input', filterLocations);
+        }
+        
+        if (postcodeFilter) {
+            postcodeFilter.addEventListener('change', filterLocations);
+        }
+
+        // Quick Quote Form handling
+        const quickQuoteForm = document.getElementById('quickQuoteForm');
+        if (quickQuoteForm) {
+            quickQuoteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you! We will contact you shortly with your quote.');
+                this.reset();
+            });
+        }
+
+        // Multi-step form handling
+        const multiStepForm = document.getElementById('multiStepForm');
+        const formSteps = document.querySelectorAll('.form-step');
+        const nextButtons = document.querySelectorAll('.next-step');
+        const prevButtons = document.querySelectorAll('.prev-step');
+
+        nextButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStep = this.closest('.form-step');
+                const nextStep = currentStep.nextElementSibling;
+                
+                // Validate current step
+                const inputs = currentStep.querySelectorAll('input[required], select[required]');
+                let isValid = true;
+                inputs.forEach(input => {
+                    if (!input.value) {
+                        isValid = false;
+                        input.classList.add('invalid');
+                        input.addEventListener('input', function() {
+                            if (this.value) {
+                                this.classList.remove('invalid');
+                            }
+                        });
+                    } else {
+                        input.classList.remove('invalid');
+                    }
+                });
+
+                if (isValid && nextStep) {
+                    currentStep.style.display = 'none';
+                    nextStep.style.display = 'block';
+                    nextStep.style.animation = 'fadeIn 0.5s ease-out';
+                }
+            });
+        });
+
+        prevButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStep = this.closest('.form-step');
+                const prevStep = currentStep.previousElementSibling;
+                
+                if (prevStep) {
+                    currentStep.style.display = 'none';
+                    prevStep.style.display = 'block';
+                    prevStep.style.animation = 'fadeIn 0.5s ease-out';
+                }
+            });
+        });
+
+        // Simple form submission handler
+        multiStepForm.addEventListener('submit', function() {
+            const submitButton = this.querySelector('.submit-form');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+        });
+
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navList = document.querySelector('nav ul');
+        
+        mobileNavToggle.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            this.textContent = navList.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                mobileNavToggle.textContent = '☰';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && navList.classList.contains('active')) {
+                navList.classList.remove('active');
+                mobileNavToggle.textContent = '☰';
+            }
         });
     });
+    </script>
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('multiStepForm');
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            const templateParams = {
+                stories: form.stories.value,
+                roofType: form.roofType.value,
+                gutterGuard: form.gutterGuard.value,
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                address: form.address.value,
+                suburb: form.suburb.value,
+                message: form.message.value
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    submitButton.textContent = 'Quote Sent!';
+                    form.reset();
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Get Quote Now';
+                    }, 3000);
+                    
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'success-message';
+                    successMessage.textContent = 'Thank you! We will contact you shortly.';
+                    form.appendChild(successMessage);
+                    setTimeout(() => successMessage.remove(), 5000);
+                }, function(error) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Get Quote Now';
+                    
+                    // Show error message
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'error-message';
+                    errorMessage.textContent = 'Sorry, something went wrong. Please try again or call us directly.';
+                    form.appendChild(errorMessage);
+                    setTimeout(() => errorMessage.remove(), 5000);
+                });
+
+            return false;
+        }
+    </script>
+    <script>
+    async function handleQuickSubmit(event) {
+        event.preventDefault();
+        
+        const form = event.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('https://formsubmit.co/ajax/info@guttergoat.com.au', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            });
+
+            const result = await response.json();
+            
+            if (result.success) {
+                window.location.href = '/thanks.html';
+            } else {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Get Quote Now';
+                alert('Something went wrong. Please try again or call us directly.');
+            }
+        } catch (error) {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get Quote Now';
+            alert('Something went wrong. Please try again or call us directly.');
+        }
+
+        return false;
+    }
     </script>
 </body>
 </html> 
