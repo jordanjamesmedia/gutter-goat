@@ -13,11 +13,11 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-16797354549');
-    </script>
-    
-    <!-- Event snippet for Thanks conversion page -->
-    <script>
-        gtag('event', 'conversion', {'send_to': 'AW-16797354549/sADJCML-qvIZELWUzck-'});
+        
+        // Event snippet for Thanks conversion page
+        window.onload = function() {
+            gtag('event', 'conversion', {'send_to': 'AW-16797354549/sADJCML-qvIZELWUzck-'});
+        }
     </script>
 </head>
 <body>
