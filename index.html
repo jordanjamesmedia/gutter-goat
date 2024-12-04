@@ -100,7 +100,11 @@
                 <div class="hero-form">
                     <div class="quick-quote-form">
                         <h3>Get a Quick Quote</h3>
-                        <form id="quickQuoteForm" onsubmit="return handleQuickSubmit(event)">
+                        <form id="quickQuoteForm" action="https://formsubmit.co/el/xawebi" method="POST">
+                            <input type="hidden" name="_next" value="https://guttergoat.com.au/thanks.html">
+                            <input type="hidden" name="_subject" value="Quick Quote Request - Gutter Goat">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
                             <div class="form-group">
                                 <input type="text" id="quickName" name="name" required placeholder="Your Name">
                             </div>
@@ -111,10 +115,6 @@
                                 <input type="text" id="quickSuburb" name="suburb" required placeholder="Your Suburb">
                             </div>
                             <button type="submit" class="submit-button">Get Quote Now</button>
-                            <input type="hidden" name="_next" value="https://guttergoat.com.au/thanks.html">
-                            <input type="hidden" name="_subject" value="Quick Quote Request - Gutter Goat">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_captcha" value="false">
                         </form>
                     </div>
                 </div>
@@ -222,7 +222,11 @@
                 <p class="section-subtitle">Answer a few questions to receive your fast, accurate quote</p>
                 <div class="contact-wrapper">
                     <div class="contact-form-side">
-                        <form id="multiStepForm" class="multi-step-form" onsubmit="return handleSubmit(event)">
+                        <form id="multiStepForm" class="multi-step-form" action="https://formsubmit.co/el/xawebi" method="POST">
+                            <input type="hidden" name="_next" value="https://guttergoat.com.au/thanks.html">
+                            <input type="hidden" name="_subject" value="Multi-Step Quote Request - Gutter Goat">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
                             <div class="form-step" data-step="1">
                                 <h3>Step 1: Basic Details</h3>
                                 <div class="form-group">
@@ -354,10 +358,6 @@
                                     <button type="button" class="prev-step">Go Back</button>
                                 </div>
                             </div>
-                            <input type="hidden" name="_next" value="https://guttergoat.com.au/thanks.html">
-                            <input type="hidden" name="_subject" value="New Gutter Cleaning Quote Request">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_captcha" value="false">
                         </form>
                     </div>
                     <div class="contact-info-side">
@@ -599,6 +599,43 @@
         } catch (error) {
             submitButton.disabled = false;
             submitButton.textContent = 'Get Quote Now';
+            alert('Something went wrong. Please try again or call us directly.');
+        }
+
+        return false;
+    }
+    </script>
+    <script>
+    async function handleSubmit(event) {
+        event.preventDefault();
+        
+        const form = event.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('https://formsubmit.co/ajax/info@guttergoat.com.au', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            });
+
+            const result = await response.json();
+            
+            if (result.success) {
+                window.location.href = '/thanks.html';
+            } else {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Get Quote';
+                alert('Something went wrong. Please try again or call us directly.');
+            }
+        } catch (error) {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get Quote';
             alert('Something went wrong. Please try again or call us directly.');
         }
 
