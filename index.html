@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gutter Goat - Professional Gutter Cleaning Services</title>
+    <link rel="icon" type="image/png" href="/images/gutter-goat-logo.png">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Google tag (gtag.js) -->
@@ -454,11 +455,6 @@
                     if (!input.value) {
                         isValid = false;
                         input.classList.add('invalid');
-                        input.addEventListener('input', function() {
-                            if (this.value) {
-                                this.classList.remove('invalid');
-                            }
-                        });
                     } else {
                         input.classList.remove('invalid');
                     }
@@ -467,7 +463,6 @@
                 if (isValid && nextStep) {
                     currentStep.style.display = 'none';
                     nextStep.style.display = 'block';
-                    nextStep.style.animation = 'fadeIn 0.5s ease-out';
                 }
             });
         });
@@ -480,17 +475,20 @@
                 if (prevStep) {
                     currentStep.style.display = 'none';
                     prevStep.style.display = 'block';
-                    prevStep.style.animation = 'fadeIn 0.5s ease-out';
                 }
             });
         });
 
-        // Simple form submission handler
-        multiStepForm.addEventListener('submit', function() {
-            const submitButton = this.querySelector('.submit-form');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-        });
+        // Remove all other form handlers
+        if (multiStepForm) {
+            multiStepForm.addEventListener('submit', function(e) {
+                const submitButton = this.querySelector('.submit-form');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                // Let the form submit naturally
+                return true;
+            });
+        }
 
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const navList = document.querySelector('nav ul');
